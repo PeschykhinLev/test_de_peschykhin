@@ -49,7 +49,7 @@ The `currency_converter/converter.py` file contains the logic for converting ord
   - `customer_email` (VARCHAR): Email address of the customer
   - `order_date` (TIMESTAMP): Date and time when the order was placed
   - `amount` (NUMERIC): Original order amount
-  - `currency` (VARCHAR): Original currency (randomly chosen) of the order (e.g., USD, EUR, GBP)
+  - `currency` (VARCHAR): Original currency (randomly chosen) from the list (e.g., USD, EUR, GBP)
 
 - **Connection Details**:
   - Host: host.docker.internal
@@ -118,6 +118,8 @@ Open `http://localhost:8080` in your browser. Log in with:
 Go to 'Admin > Connection' and connect to postgres-1 and postgres-2
 
 <img width="1425" alt="image" src="https://github.com/user-attachments/assets/bd0424cf-4178-45b3-a00e-0a5060e64b26">
+
+CONNECTION DETAILS FOR EACH DATABASE ARE ABOVE.
 
 ### 3. Run DAGs
 
