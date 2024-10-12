@@ -148,7 +148,7 @@ Connect to databases and check data:
 <img width="1028" alt="image" src="https://github.com/user-attachments/assets/55b03e5d-8215-4973-8a4b-ef8c994cafdf">
 
 ## Takeaways and Concerns
-- It was a great first hands on expereince in combiling tools like Docker, AirFlow, Postgres all together.
+- It was a great first hands on experience in combiling tools like Docker, AirFlow, Postgres all together.
 - Concerned about dedicating a whole DAG for a single tasks, as it might be inneficieant, but due to interal scheduling ('@once', '*/10 * * * *', '@hourly') found spliting the tasks a way to go.
 - `CurrencyConverterOperator` might be revised and rebuild to:
    - Avoid multiple connections to the databases.
