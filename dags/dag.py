@@ -40,7 +40,7 @@ with DAG(
     default_args=default_args,
     start_date=datetime.now() - timedelta(hours=2), # or use 'datetime(2024, 10, 12)'
     schedule_interval='*/10 * * * *', 
-    catchup=True
+    catchup=True # set for testing
 ) as generate_orders_dag:
     
     generate_orders_task = GenerateInsertOrderDataOperator(
@@ -54,7 +54,7 @@ with DAG(
     default_args=default_args,
     start_date=datetime.now() - timedelta(hours=2), # or use 'datetime(2024, 10, 12)'
     schedule_interval='@hourly',
-    catchup=True
+    catchup=True # set for testing
 ) as transform_and_transfer_dag:
     
     transform_and_transfer_data = CurrencyConverterOperator(
