@@ -154,5 +154,5 @@ Connect to databases and check data:
 - Concerned about dedicating a whole DAG for a single tasks, as it might be inneficieant, but due to interal scheduling ('@once', '*/10 * * * *', '@hourly') found spliting the tasks a way to go.
 - `CurrencyConverterOperator` might be revised and rebuild to:
    - Avoid multiple connections to the databases.
-   - Find an alternative method of preventing overwriting data from another database. The current approach causes the DAG execution time to increase by 1.5x every hour due to the growing number of transactions -> iterations.
+   - Find an alternative method of preventing overwriting data from another database. The current approach could causes the DAG execution time to increase every hour due to the growing number of transactions in source database. Iterative search for new `order_id` might not be the best approach, so far.
 - It might be more concise to initialize two databases in a single container.
