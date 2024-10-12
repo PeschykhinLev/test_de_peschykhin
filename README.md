@@ -48,7 +48,7 @@ The `currency_converter/converter.py` file contains the logic for converting ord
   - `order_id` (UUID): Unique identifier for each order
   - `customer_email` (VARCHAR): Email address of the customer
   - `order_date` (TIMESTAMP): Date and time when the order was placed
-  - `amount` (NUMERIC): Original order amount
+  - `amount` DECIMAL(10, 2): Original order amount
   - `currency` (VARCHAR): Original currency (randomly chosen) from the list (e.g., USD, EUR, GBP)
 
 - **Connection Details**:
@@ -68,7 +68,7 @@ The `currency_converter/converter.py` file contains the logic for converting ord
   - `order_id` (UUID): Unique identifier for each order (same as in Postgres-1)
   - `customer_email` (VARCHAR): Email address of the customer
   - `order_date` (TIMESTAMP): Date and time when the order was placed
-  - `amount` (NUMERIC): Converted order amount in the desired currency
+  - `amount` DECIMAL(10, 2): Converted order amount in the desired currency
   - `converted_currency` (VARCHAR): The currency to which the amount has been converted
 
 - **Connection Details**:
