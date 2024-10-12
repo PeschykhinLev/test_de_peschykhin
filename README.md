@@ -63,7 +63,7 @@ The `currency_converter/converter.py` file contains the logic for converting ord
 ### Converted Orders Table
 
 - **Table Name**: `orders_converted`
-- **Description**: Stores the order information after currency conversion, as processed by the `CurrencyConverterOperator`.
+- **Description**: Stores new orders information after currency conversion, as processed by the `CurrencyConverterOperator`.
 - **Columns**:
   - `order_id` (UUID): Unique identifier for each order (same as in Postgres-1)
   - `customer_email` (VARCHAR): Email address of the customer
@@ -139,10 +139,15 @@ Connect to databases and check data:
 
 <img width="978" alt="image" src="https://github.com/user-attachments/assets/548287ca-a990-4bb5-8d9c-3eda3c5e3053">
 
+3. Changed `start_date` to `datetime.now() - timedelta(hours=2)` and set `catchup=True` to see how the DAG would execute for the past 2 hours. Checked run schedules, received data in both databases. Everything seems to work fine.
+   - from `9:30` to `11:50` we got 15 and 2 runs -> 75 000 rows of row and converted data.
+
+<img width="1412" alt="image" src="https://github.com/user-attachments/assets/91d567d2-79c9-4175-978d-8232e499a64f">
+
 ## Takeaways and Concerns
 - It was a great first hands on expereince in combiling tools like Docker, AirFlow, Postgres all together.
 - Concerned about dedicating a whole DAG for a single tasks, as it might be inneficieant, but due to interal scheduling ('@once', '*/10 * * * *', '@hourly') found spliting the tasks a way to go.
 - `CurrencyConverterOperator` might be revised and rebuild to:
    - Avoid multiple connections to the databases.
-   - Find an alternative method of preventing overwriting data from another database. The current approach causes the DAG execution time to increase by 1.5x every hour due to the growing number of iterations.
+   - Find an alternative method of preventing overwriting data from another database. The current approach causes the DAG execution time to increase by 1.5x every hour due to the growing number of transactions -> iterations.
 - It might be more concise to initialize two databases in a single container.
