@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 
-# Custom plugins, available via volume mapping. No need to worry about import issues.
+# Custom plugins (path set in compose file). No need to worry about import issues.
 from data_generator.generator import GenerateInsertOrderDataOperator
 from currency_converter.converter import CurrencyConverterOperator
 from datetime import datetime, timedelta
