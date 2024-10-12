@@ -105,7 +105,7 @@ Run the following command in the project directory, after booting up Docker Desk
 ```bash
 docker-compose up
 ```
-Wait till we get 'healthy' status on all containers, it may take a some time.
+Wait till we get 'healthy' status on all containers, it may take some time.
 
 <img width="1199" alt="image" src="https://github.com/user-attachments/assets/82f01456-6f88-43ab-a649-03f1a11cb7ad">
 
