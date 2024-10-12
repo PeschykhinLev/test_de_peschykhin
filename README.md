@@ -140,7 +140,7 @@ Connect to databases and check data:
 <img width="978" alt="image" src="https://github.com/user-attachments/assets/548287ca-a990-4bb5-8d9c-3eda3c5e3053">
 
 3. Changed `start_date` to `datetime.now() - timedelta(hours=2)` and set `catchup=True` to see how the DAG would execute for the past 2 hours. Checked run schedules, received data in both databases. Everything seems to work fine.
-   - from `9:30` to `11:50` we got 15 and 2 runs -> 75 000 rows of row and converted data.
+   - from `9:30` to `11:50` we got 15 and 2 runs -> 75 000 rows of row data and converted data.
 
 <img width="1412" alt="image" src="https://github.com/user-attachments/assets/91d567d2-79c9-4175-978d-8232e499a64f">
 
