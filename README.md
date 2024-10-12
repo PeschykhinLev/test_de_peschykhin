@@ -142,5 +142,7 @@ Connect to databases and check data:
 ## Takeaways and Concerns
 - It was a great first hands on expereince in combiling tools like Docker, AirFlow, Postgres all together.
 - Concerned about dedicating a whole DAG for a single tasks, as it might be inneficieant, but due to interal scheduling ('@once', '*/10 * * * *', '@hourly') found spliting the tasks a way to go.
-- `CurrencyConverterOperator` might be revised and rebuild to avoid multiple connections to the dbs.
-
+- `CurrencyConverterOperator` might be revised and rebuild to:
+   - Avoid multiple connections to the databases.
+   - Find an alternative method of preventing overwriting data from another database. The current approach causes the DAG execution time to increase by 1.5x every hour due to the growing number of iterations.
+- It might be more concise to initialize two databases in a single container.
