@@ -91,11 +91,11 @@ The `currency_converter/converter.py` file contains the logic for converting ord
    - Added a new volume mapping: `${AIRFLOW_PROJ_DIR:-.}/sql:/opt/airflow/sql`
    - This allows SQL scripts in the local `sql` directory to be accessible within the Airflow containers.
 
+3. **Disabled Example DAGs**
+
 ## API KEY
    - Value: '873e6dea131a4ed19d337c44ee7f36c6'
    - Purpose: This is the API key for accessing the OpenExchangeRates API, declares in `.env` file. I will leave it here for testing purposes ;)
-
-3. **Disabled Example DAGs**
 
 ## Quick Testing Guide
 
